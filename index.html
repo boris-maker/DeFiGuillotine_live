@@ -8,83 +8,48 @@
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
   <style>
     :root{
-      --bg:#0b0b0b;
-      --ink:#eaeaea;
-      --ink-2:#b5b5b5;
-      --line:#222;
-      --card:#111;
-      --accent:#ff3131;
-      --accent-2:#ff5959;
-      --muted:#8a8a8a;
-      --radius:10px;
+      --bg:#0b0b0b; --ink:#eaeaea; --ink-2:#b5b5b5; --line:#222; --card:#111;
+      --accent:#ff3131; --accent-2:#ff5959; --muted:#8a8a8a; --radius:10px;
     }
     *{box-sizing:border-box}
     html,body{height:100%}
-    body{
-      margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Inter, "Helvetica Neue", Arial;
-      background: var(--bg);
-      color: var(--ink);
-      line-height:1.35;
-    }
+    body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Inter,"Helvetica Neue",Arial;background:var(--bg);color:var(--ink);line-height:1.35}
     a{color:inherit}
     .container{max-width:1100px;margin:0 auto;padding:0 18px}
-    .nav{
-      border-bottom:1px solid var(--line);
-      position:sticky;top:0;background:rgba(0,0,0,.7);backdrop-filter: blur(6px);
-    }
-    .nav-inner{
-      display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 0;
-    }
+    .nav{border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(0,0,0,.7);backdrop-filter:blur(6px)}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 0}
     .nav-left,.nav-right{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
-    .nav a{
-      text-decoration:none;border:1px solid var(--line);padding:6px 10px;border-radius:7px;color:var(--ink-2);
-      font-weight:600;font-size:12px;
-    }
+    .nav a{text-decoration:none;border:1px solid var(--line);padding:6px 10px;border-radius:7px;color:var(--ink-2);font-weight:600;font-size:12px}
     .nav a:hover{border-color:#444;color:#fff}
     .brand{font-weight:900;letter-spacing:.02em}
     .hero{padding:22px 0 8px;border-bottom:1px solid var(--line)}
     .hero h1{font-size:42px;margin:0 0 6px;font-weight:1000;letter-spacing:.01em}
     .hero p{margin:0;color:var(--muted);max-width:800px}
-    .layout{
-      display:grid;grid-template-columns: 320px 1fr;gap:16px;padding:16px 0 64px;
-    }
-    @media (max-width: 920px){ .layout{grid-template-columns:1fr} }
-    .panel{
-      border:1px solid var(--line);border-radius:var(--radius);background:var(--card);padding:12px;display:grid;gap:12px;
-    }
+    .layout{display:grid;grid-template-columns:320px 1fr;gap:16px;padding:16px 0 64px}
+    @media (max-width:920px){.layout{grid-template-columns:1fr}}
+    .panel{border:1px solid var(--line);border-radius:var(--radius);background:var(--card);padding:12px;display:grid;gap:12px}
     label{font-size:11px;color:var(--muted);display:block;margin-bottom:6px;font-weight:600;letter-spacing:.06em;text-transform:uppercase}
-    input{
-      width:100%;padding:10px 12px;border-radius:8px;border:1px solid var(--line);background:#0d0d0d;color:#fff;
-      font-weight:700; letter-spacing:.02em;
-    }
+    input{width:100%;padding:10px 12px;border-radius:8px;border:1px solid var(--line);background:#0d0d0d;color:#fff;font-weight:700;letter-spacing:.02em}
     .row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
-    button{
-      appearance:none;background:#121212;border:1px solid var(--line);color:#fff;font-weight:900;letter-spacing:.02em;
-      padding:10px 12px;border-radius:8px;cursor:pointer;
-    }
+    button{appearance:none;background:#121212;border:1px solid var(--line);color:#fff;font-weight:900;letter-spacing:.02em;padding:10px 12px;border-radius:8px;cursor:pointer}
     button:hover{border-color:#444}
     .btn-primary{background:#1a1a1a}
     .btn-danger{background:var(--accent);border-color:#822;box-shadow:0 4px 0 #5a1515 inset;color:#fff}
     .btn-danger:hover{filter:brightness(1.06)}
-    .status{
-      font-size:12px;color:var(--ink-2);border:1px dashed var(--line);border-radius:8px;padding:10px 12px;background:#0c0c0c;
-    }
-    .success{color:#8ff0c9}
-    .danger{color:#ff9a9a}
-    .grid{display:grid;grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap:12px}
-    .card{
-      border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:#0e0e0e;display:flex;flex-direction:column;min-height:300px;
-    }
+    .status{font-size:12px;color:var(--ink-2);border:1px dashed var(--line);border-radius:8px;padding:10px 12px;background:#0c0c0c}
+    .success{color:#8ff0c9} .danger{color:#ff9a9a}
+    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
+    .card{border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:#0e0e0e;display:flex;flex-direction:column;min-height:300px}
     .card img{width:100%;height:200px;object-fit:cover;background:#0a0a0a;border-bottom:1px solid var(--line)}
     .meta{padding:10px 10px 12px;display:grid;gap:8px}
     .title{font-weight:1000;font-size:14px}
     .muted{color:var(--muted);font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
     .pill{border:1px solid var(--line);border-radius:999px;padding:4px 10px;font-size:11px;color:var(--ink-2)}
     .footer{color:var(--muted);font-size:12px;text-align:center;padding:22px 0 40px}
-    .kbd{font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; background:#0c0c0c; border:1px solid var(--line); padding:2px 6px; border-radius:6px}
+    .kbd{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background:#0c0c0c;border:1px solid var(--line);padding:2px 6px;border-radius:6px}
   </style>
-  <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js" integrity="sha256-Pc8S3w0hDnnt1z7tZ1mP9n2fUq2w3sGh3o7kzC/8kP8=" crossorigin="anonymous"></script>
+  <!-- IMPORTANT: no SRI; use defer so it's guaranteed available before our inline script runs -->
+  <script defer src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
 </head>
 <body>
   <nav class="nav">
@@ -108,7 +73,6 @@
   </header>
 
   <main class="container layout">
-    <!-- Left controls -->
     <aside class="panel">
       <div>
         <label for="contract">Contract address (ERC-721)</label>
@@ -133,7 +97,6 @@
       <div id="status" class="status">Disconnected</div>
     </aside>
 
-    <!-- Right gallery -->
     <section>
       <div id="grid" class="grid"></div>
       <div class="footer">
@@ -143,6 +106,7 @@
   </main>
 
   <script>
+    // ---------- helpers / state ----------
     const DEAD_ADDRESS = "0x000000000000000000000000000000000000dEaD";
     const ERC721_ABI = [
       "function name() view returns (string)",
@@ -157,78 +121,113 @@
       "function balanceOf(address owner) view returns (uint256)",
       "function tokenOfOwnerByIndex(address owner, uint256 index) view returns (uint256)"
     ];
-    const ERC721_BURNABLE_ABI = [
-      ...ERC721_ABI,
-      "function burn(uint256 tokenId)"
-    ];
+    const ERC721_BURNABLE_ABI = [...ERC721_ABI, "function burn(uint256 tokenId)"];
 
     let provider, signer, currentAccount;
-    const gridEl = document.getElementById('grid');
-    const statusEl = document.getElementById('status');
-    const acctBadge = document.getElementById('acctBadge');
+    const $ = (id) => document.getElementById(id);
+    const gridEl = $("grid"), statusEl = $("status"), acctBadge = $("acctBadge");
 
-    function short(a){ return a ? a.slice(0,6)+'…'+a.slice(-4) : ''; }
-    function setStatus(msg, cls=''){ statusEl.className = 'status ' + cls; statusEl.textContent = msg; }
-    function needWallet(){ if(!window.ethereum){ alert('No wallet detected. Install MetaMask.'); throw new Error('no-ethereum'); }}
+    const short = (a) => (a ? a.slice(0, 6) + "…" + a.slice(-4) : "");
+    const setStatus = (msg, cls = "") => { statusEl.className = "status " + cls; statusEl.textContent = msg; };
 
-    async function connect(){
-      needWallet();
-      provider = new ethers.providers.Web3Provider(window.ethereum, "any");
-      await provider.send("eth_requestAccounts", []);
-      signer = provider.getSigner();
-      currentAccount = await signer.getAddress();
-      document.getElementById('connectBtn').style.display='none';
-      acctBadge.style.display='inline-block'; acctBadge.textContent=short(currentAccount);
-      setStatus('Connected as ' + currentAccount);
-      window.ethereum.on('accountsChanged', () => location.reload());
-      window.ethereum.on('chainChanged', () => location.reload());
+    // Pick a provider (EIP-6963 friendly) or fallback to window.ethereum
+    async function getInjectedProvider() {
+      let chosen = null;
+      try {
+        const providers = [];
+        window.addEventListener("eip6963:announceProvider", (e) => providers.push(e.detail.provider), { once:false });
+        window.dispatchEvent(new Event("eip6963:requestProvider"));
+        // tiny wait so any providers can announce
+        await new Promise(r => setTimeout(r, 50));
+        if (providers.length) {
+          // prefer MetaMask if present
+          chosen = providers.find(p => p.isMetaMask) || providers[0];
+        }
+      } catch {}
+      if (!chosen && window.ethereum) chosen = window.ethereum;
+      return chosen;
     }
 
-    async function getContract(address, abi){
+    // ---------- wallet connect ----------
+    async function connect() {
+      try {
+        if (typeof ethers === "undefined") {
+          setStatus("Ethers failed to load. Check the script tag / network.", "danger");
+          return;
+        }
+        setStatus("Connecting…");
+        let eth = await getInjectedProvider();
+        const isMobile = /Android|iPhone|iPad/i.test(navigator.userAgent);
+
+        if (!eth) {
+          setStatus("No wallet detected. Install MetaMask and reload.", "danger");
+          // Mobile deep-link helper:
+          if (isMobile) {
+            const dapp = location.href.replace(/^https?:\/\//, "");
+            const link = "https://metamask.app.link/dapp/" + dapp;
+            const a = document.createElement("a");
+            a.href = link; a.target = "_blank"; a.textContent = "Open in MetaMask Mobile";
+            statusEl.appendChild(document.createTextNode(" ")); statusEl.appendChild(a);
+          }
+          return;
+        }
+
+        // Request accounts (EIP-1193)
+        const accounts = await eth.request({ method: "eth_requestAccounts" });
+        if (!accounts || !accounts.length) throw new Error("No account returned by wallet.");
+
+        // Build ethers provider on the chosen EIP-1193 provider
+        provider = new ethers.providers.Web3Provider(eth, "any");
+        signer = provider.getSigner();
+        currentAccount = ethers.utils.getAddress(accounts[0]);
+
+        $("connectBtn").style.display = "none";
+        acctBadge.style.display = "inline-block";
+        acctBadge.textContent = short(currentAccount);
+
+        const net = await provider.getNetwork().catch(() => null);
+        setStatus("Connected as " + currentAccount + (net ? ` on chain ${net.chainId}` : ""));
+
+        // Re-bind events
+        eth.on?.("accountsChanged", () => location.reload());
+        eth.on?.("chainChanged", () => location.reload());
+        eth.on?.("disconnect", (err) => setStatus("Wallet disconnected: " + (err?.message || err), "danger"));
+      } catch (e) {
+        console.error(e);
+        setStatus("Connect failed: " + (e?.message || e), "danger");
+      }
+    }
+
+    // ---------- contracts / rendering ----------
+    async function getContract(address, abi) {
       const ca = ethers.utils.getAddress(address);
       return new ethers.Contract(ca, abi, signer || provider);
     }
 
-    async function probe(){
-      try{
-        const addr = document.getElementById('contract').value.trim();
-        if(!addr) return alert('Enter a contract address.');
-        const c = await getContract(addr, ERC721_ABI);
-        const name = await c.name().catch(()=>'(unknown)');
-        const sym = await c.symbol().catch(()=>'(?)');
-        setStatus(`Probed ${name} (${sym}) at ${addr}`);
-      }catch(e){ console.error(e); setStatus('Probe failed: ' + (e?.message || e), 'danger'); }
-    }
+    function ipfsToHttp(u) { if (!u) return null; return u.startsWith("ipfs://") ? "https://ipfs.io/ipfs/" + u.slice(7) : u; }
 
-    function ipfsToHttp(u){
-      if(!u) return null;
-      if(u.startsWith('ipfs://')) return 'https://ipfs.io/ipfs/'+u.replace('ipfs://','');
-      return u;
-    }
-
-    async function resolveMetadata(contract, tokenId){
-      try{
+    async function resolveMetadata(contract, tokenId) {
+      try {
         const raw = await contract.tokenURI(tokenId);
         const url = ipfsToHttp(raw);
-        if(!url) return {};
+        if (!url) return {};
         const res = await fetch(url);
-        const meta = await res.json();
-        return meta;
-      }catch{ return {}; }
+        return await res.json();
+      } catch { return {}; }
     }
 
-    function renderCard({image, name, description, tokenId, contractAddress}){
-      const card = document.createElement('div');
-      card.className='card';
-      const img = document.createElement('img');
-      img.src = image || ''; img.alt = (name || 'Token') + ' #' + tokenId;
-      img.onerror = () => { img.src=''; img.style.opacity=.4; img.alt='No image'; };
-      const meta = document.createElement('div'); meta.className='meta';
-      const title = document.createElement('div'); title.className='title'; title.textContent=(name || 'Token')+' #'+tokenId;
-      const sub = document.createElement('div'); sub.className='muted'; sub.textContent = contractAddress;
-      const desc = document.createElement('div'); desc.className='muted'; desc.textContent = (description || '').slice(0,120);
-      const actions = document.createElement('div'); actions.className='row';
-      const kill = document.createElement('button'); kill.className='btn-danger'; kill.textContent='Kill / Retire';
+    function renderCard({ image, name, description, tokenId, contractAddress }) {
+      const card = document.createElement("div");
+      card.className = "card";
+      const img = document.createElement("img");
+      img.src = image || ""; img.alt = (name || "Token") + " #" + tokenId;
+      img.onerror = () => { img.src = ""; img.style.opacity = .4; img.alt = "No image"; };
+      const meta = document.createElement("div"); meta.className = "meta";
+      const title = document.createElement("div"); title.className = "title"; title.textContent = (name || "Token") + " #" + tokenId;
+      const sub = document.createElement("div"); sub.className = "muted"; sub.textContent = contractAddress;
+      const desc = document.createElement("div"); desc.className = "muted"; desc.textContent = (description || "").slice(0, 120);
+      const actions = document.createElement("div"); actions.className = "row";
+      const kill = document.createElement("button"); kill.className = "btn-danger"; kill.textContent = "Kill / Retire";
       kill.onclick = () => retire(contractAddress, tokenId, kill);
       actions.appendChild(kill);
       meta.appendChild(title); meta.appendChild(sub); meta.appendChild(desc); meta.appendChild(actions);
@@ -236,79 +235,92 @@
       gridEl.prepend(card);
     }
 
-    async function addManual(){
-      const addr = document.getElementById('contract').value.trim();
-      const id = document.getElementById('tokenId').value.trim();
-      if(!addr || !id) return alert('Enter contract & token id.');
-      try{
+    async function probe() {
+      try {
+        const addr = $("contract").value.trim();
+        if (!addr) return alert("Enter a contract address.");
+        const c = await getContract(addr, ERC721_ABI);
+        const name = await c.name().catch(() => "(unknown)");
+        const sym = await c.symbol().catch(() => "(?)");
+        setStatus(`Probed ${name} (${sym}) at ${addr}`);
+      } catch (e) { console.error(e); setStatus("Probe failed: " + (e?.message || e), "danger"); }
+    }
+
+    async function addManual() {
+      const addr = $("contract").value.trim();
+      const id = $("tokenId").value.trim();
+      if (!addr || !id) return alert("Enter contract & token id.");
+      try {
         const c = await getContract(addr, ERC721_ABI);
         const owner = await c.ownerOf(id);
-        if(currentAccount && owner.toLowerCase() !== currentAccount.toLowerCase()){
-          if(!confirm('Warning: on-chain owner is different. Continue to display anyway?')) return;
+        if (currentAccount && owner.toLowerCase() !== currentAccount.toLowerCase()) {
+          if (!confirm("Warning: on-chain owner is different. Continue to display anyway?")) return;
         }
         const meta = await resolveMetadata(c, id);
         const image = ipfsToHttp(meta.image || meta.image_url);
-        renderCard({image, name: meta.name, description: meta.description, tokenId: id, contractAddress: ethers.utils.getAddress(addr)});
-        setStatus('Added token #'+id+' from '+addr);
-      }catch(e){ console.error(e); setStatus('Add failed: ' + (e?.message || e), 'danger'); }
+        renderCard({ image, name: meta.name, description: meta.description, tokenId: id, contractAddress: ethers.utils.getAddress(addr) });
+        setStatus("Added token #" + id + " from " + addr);
+      } catch (e) { console.error(e); setStatus("Add failed: " + (e?.message || e), "danger"); }
     }
 
-    async function loadEnumerable(){
-      const addr = document.getElementById('contract').value.trim();
-      if(!addr) return alert('Enter contract first.');
-      if(!currentAccount) return alert('Connect wallet first.');
-      setStatus('Scanning your tokens…');
-      try{
+    async function loadEnumerable() {
+      const addr = $("contract").value.trim();
+      if (!addr) return alert("Enter contract first.");
+      if (!currentAccount) return alert("Connect wallet first.");
+      setStatus("Scanning your tokens…");
+      try {
         const c = await getContract(addr, ERC721_ENUM_ABI);
         const bal = await c.balanceOf(currentAccount);
         const n = bal.toNumber ? bal.toNumber() : Number(bal);
-        if(!n){ setStatus('No tokens found for this contract.'); return; }
+        if (!n) { setStatus("No tokens found for this contract."); return; }
         const cap = Math.min(n, 50);
-        for(let i=0;i<cap;i++){
+        for (let i = 0; i < cap; i++) {
           const tid = await c.tokenOfOwnerByIndex(currentAccount, i);
           const id = tid.toString();
           const meta = await resolveMetadata(c, id);
           const image = ipfsToHttp(meta.image || meta.image_url);
-          renderCard({image, name: meta.name, description: meta.description, tokenId: id, contractAddress: ethers.utils.getAddress(addr)});
+          renderCard({ image, name: meta.name, description: meta.description, tokenId: id, contractAddress: ethers.utils.getAddress(addr) });
         }
-        setStatus(`Loaded ${Math.min(n,50)} token(s).` + (n>50 ? ' (showing first 50)' : ''));
-      }catch(e){ console.error(e); setStatus('Enumeration failed: ' + (e?.message || e), 'danger'); }
+        setStatus(`Loaded ${Math.min(n, 50)} token(s).` + (n > 50 ? " (showing first 50)" : ""));
+      } catch (e) { console.error(e); setStatus("Enumeration failed: " + (e?.message || e), "danger"); }
     }
 
-    async function retire(contractAddr, tokenId, btn){
-      if(!currentAccount) return alert('Connect wallet first.');
-      if(!confirm(`You are about to retire token #${tokenId} at ${contractAddr}. This is intended to be irreversible. Continue?`)) return;
-      try{
+    async function retire(contractAddr, tokenId, btn) {
+      if (!currentAccount) return alert("Connect wallet first.");
+      if (!confirm(`You are about to retire token #${tokenId} at ${contractAddr}. This is intended to be irreversible. Continue?`)) return;
+      try {
         btn.disabled = true;
-        setStatus('Checking burn() support…');
+        setStatus("Checking burn() support…");
         const burnable = await getContract(contractAddr, ERC721_BURNABLE_ABI).connect(signer);
         let useBurn = false;
-        try{ await burnable.callStatic.burn(tokenId); useBurn = true; } catch{ useBurn = false; }
+        try { await burnable.callStatic.burn(tokenId); useBurn = true; } catch { useBurn = false; }
         let tx;
-        if(useBurn){
-          setStatus('Calling burn(tokenId)…');
-          tx = await burnable.burn(tokenId);
-        }else{
-          setStatus('Falling back to transfer to dead address…');
+        if (useBurn) {
+          setStatus("Calling burn(tokenId)…"); tx = await burnable.burn(tokenId);
+        } else {
+          setStatus("Falling back to transfer to dead address…");
           const erc721 = await getContract(contractAddr, ERC721_ABI).connect(signer);
           tx = await erc721.safeTransferFrom(currentAccount, DEAD_ADDRESS, tokenId);
         }
-        setStatus('Waiting for confirmation…');
+        setStatus("Waiting for confirmation…");
         const rc = await tx.wait();
-        setStatus('Completed in tx ' + rc.transactionHash, 'success');
-        btn.textContent = 'Retired ✓';
-      }catch(e){
-        console.error(e); setStatus('Retire failed: ' + (e?.data?.message || e?.message || e), 'danger'); btn.disabled = false;
+        setStatus("Completed in tx " + rc.transactionHash, "success");
+        btn.textContent = "Retired ✓";
+      } catch (e) {
+        console.error(e); setStatus("Retire failed: " + (e?.data?.message || e?.message || e), "danger"); btn.disabled = false;
       }
     }
 
-    // wire
-    document.getElementById('connectBtn').addEventListener('click', connect);
-    document.getElementById('probeBtn').addEventListener('click', probe);
-    document.getElementById('addManualBtn').addEventListener('click', addManual);
-    document.getElementById('loadEnumerableBtn').addEventListener('click', loadEnumerable);
+    // ---------- wire UI ----------
+    document.getElementById("connectBtn").addEventListener("click", connect);
+    document.getElementById("probeBtn").addEventListener("click", probe);
+    document.getElementById("addManualBtn").addEventListener("click", addManual);
+    document.getElementById("loadEnumerableBtn").addEventListener("click", loadEnumerable);
 
-    if(!window.ethereum) setStatus('No wallet detected. Install MetaMask.', 'danger');
+    // Helpful initial status
+    if (!window.ethereum) {
+      setStatus("No wallet detected. Install MetaMask or open in the MetaMask in-app browser.", "danger");
+    }
   </script>
 </body>
 </html>
